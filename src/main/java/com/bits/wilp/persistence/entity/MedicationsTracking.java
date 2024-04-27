@@ -8,18 +8,25 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "health_metrics")
-public class HealthMetrics extends AuditableEntity {
+@Table(name = "medication_tracking")
+public class MedicationsTracking extends AuditableEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String glucoseLevel;
-    private String bloodPressure;
-    private String weight;
 
     @ManyToOne
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Users users;
+
+    @ManyToOne
+    @JoinColumn(name = "medication_id", referencedColumnName = "id")
+    private Medications medications;
+
+    private String intakeTime;
+    private String lastIntakeTime;
+
+
 
 
 }

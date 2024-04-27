@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: healthTrack
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=healthtrack
+    username: postgres
+    password: Batman@123a
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
